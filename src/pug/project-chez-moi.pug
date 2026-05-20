@@ -1,0 +1,61 @@
+doctype html
+html(lang='en')
+
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        title Chez-moi - OXBIY Projects
+        link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic', rel='stylesheet', type='text/css')
+        link(href='css/styles.css', rel='stylesheet')
+
+    body#page-top
+        nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3
+            .container.px-4.px-lg-5
+                a.navbar-brand(href='index.html')
+                    img.logo(src='assets/img/logo.jpg', alt='OXBIY')
+                button.navbar-toggler.navbar-toggler-right(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarResponsive.collapse.navbar-collapse
+                    ul.navbar-nav.ms-auto.my-2.my-lg-0
+                        li.nav-item
+                            a.nav-link(href='index.html') Home
+
+        // Project header
+        header.masthead
+            .container.px-4.px-lg-5.h-100
+                .row.gx-4.gx-lg-5.h-100.align-items-center.justify-content-center.text-center
+                    .col-lg-8.align-self-end
+                        h1.text-dark.font-weight-bold Chez-moi
+                        hr.divider
+                    .col-lg-8.align-self-baseline
+                        p.text-dark.mb-5
+                            | Chez-moi is a secure property rental platform where landlords list homes and clients can view and rent properties. The platform emphasizes verification, secure booking workflows, and protections for both renters and hosts.
+
+        // Project content
+        section.page-section
+            .container.px-4.px-lg-5
+                h2.mb-4 Project Overview
+                p.mb-4
+                    | Chez-moi allows landlords to present properties with detailed listings and images, manage availability, and accept bookings. Renters can schedule visits, review property details, and complete secure transactions through the platform.
+
+                .row.gx-4.gx-lg-5
+                    .col-md-6
+                        img.img-fluid(src='assets/img/portfolio/fullsize/3.jpg', alt='Chez-moi image')
+                    .col-md-6
+                        img.img-fluid(src='assets/img/portfolio/fullsize/4.jpg', alt='Chez-moi image')
+
+                a.btn.btn-primary.mt-4(href='index.html') Back to Home
+
+        // Footer
+        footer.bg-light.py-5
+            .container.px-4.px-lg-5.text-center
+                img.footer-logo(src='assets/img/logo.jpg', alt='OXBIY')
+                .small.text-center.text-muted
+                    | Copyright &copy; 2023 - OXBIY
+
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js')
+        script(src='js/scripts.js')
