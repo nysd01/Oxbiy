@@ -22,19 +22,35 @@ body {
     padding: 8rem 0;
 }
 
-// Focused green accents for service and project cards
+// Focused navy accents for service and project cards
 .service-card {
-    border-radius: .75rem;
+    border-radius: 1rem;
     background-color: $white;
-    border-left: 4px solid $primary;
-    border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: 0 6px 18px rgba(11,77,44,0.04);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,45,91,0.03);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0,45,91,0.08);
+        border-color: rgba($primary, 0.2);
+    }
 }
 
 .project-card {
-    border-radius: .5rem;
+    border-radius: 1rem;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+}
+
+.transition-all {
+    transition: all 0.3s ease;
 }
 
 .project-card img {
