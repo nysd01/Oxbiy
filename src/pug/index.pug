@@ -40,6 +40,8 @@ html(lang='en')
                         li.nav-item
                             a.nav-link(href='#about') About
                         li.nav-item
+                            a.nav-link(href='about-us.html') Team
+                        li.nav-item
                             a.nav-link(href='#services') Services
                         li.nav-item
                             a.nav-link(href='#portfolio') Portfolio
@@ -85,8 +87,64 @@ html(lang='en')
                     .col-lg-6
                         img.img-fluid.rounded-3.shadow-lg(src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80', alt='OXBIY Team Collaboration')
 
+        // Team
+        section#team.page-section.bg-white
+            .container.px-4.px-lg-5
+                .text-center.mb-5
+                    h2 Meet Our Team
+                    hr.divider
+                    p.lead.text-muted The experts behind our secure solutions.
+                .row.gx-4.gx-lg-5.justify-content-center
+                    // Team Member 1
+                    .col-lg-4.col-md-6.mb-5
+                        .team-bubble.text-center
+                            .member-icon-wrap
+                                i.bi-shield-lock
+                            h4.h5.mb-1 Team Member 1
+                            p.text-primary.small.fw-bold.mb-3 Lead Architect
+                            p.text-muted.small.mb-0
+                                | Specialized in building high-security distributed systems.
+                    // Team Member 2
+                    .col-lg-4.col-md-6.mb-5
+                        .team-bubble.text-center
+                            .member-icon-wrap
+                                i.bi-code-slash
+                            h4.h5.mb-1 Team Member 2
+                            p.text-primary.small.fw-bold.mb-3 Senior Engineer
+                            p.text-muted.small.mb-0
+                                | Focused on scalable backend infrastructure and automation.
+                    // Team Member 3
+                    .col-lg-4.col-md-6.mb-5
+                        .team-bubble.text-center
+                            .member-icon-wrap
+                                i.bi-palette
+                            h4.h5.mb-1 Team Member 3
+                            p.text-primary.small.fw-bold.mb-3 UI/UX Designer
+                            p.text-muted.small.mb-0
+                                | Crafting intuitive and secure user experiences.
+                    // Team Member 4
+                    .col-lg-4.col-md-6.mb-5
+                        .team-bubble.text-center
+                            .member-icon-wrap
+                                i.bi-graph-up-arrow
+                            h4.h5.mb-1 Team Member 4
+                            p.text-primary.small.fw-bold.mb-3 Growth Lead
+                            p.text-muted.small.mb-0
+                                | Bridging the gap between technology and business value.
+                    // Team Member 5
+                    .col-lg-4.col-md-6.mb-5
+                        .team-bubble.text-center
+                            .member-icon-wrap
+                                i.bi-cpu
+                            h4.h5.mb-1 Team Member 5
+                            p.text-primary.small.fw-bold.mb-3 Tech Strategist
+                            p.text-muted.small.mb-0
+                                | Driving innovation through cutting-edge technology adoption.
+                .text-center.mt-4
+                    a.btn.btn-outline-primary(href='about-us.html') Learn More About Us
+
         // Services
-        section#services.page-section
+        section#services.page-section.bg-light
             .container.px-4.px-lg-5
                 .text-center.mb-5
                     h2 Our Services
@@ -94,50 +152,50 @@ html(lang='en')
                     p.lead.mx-auto OXBIY delivers end-to-end product engineering and secure platform services.
                 .row.gx-4.gx-lg-5
                     .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.p-4.border.rounded-3.text-center.transition-all
-                            i.bi-window-stack.fs-1.text-primary.mb-3
-                            h4.h5 Web Application Development
-                            p.text-muted.small.mb-0 Enterprise-grade web platforms focused on performance and reliability.
+                        .service-card.h-100.text-center
+                            i.bi-window-stack
+                            h4 Web Application Development
+                            p Enterprise-grade web platforms focused on performance and reliability.
                     .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.p-4.border.rounded-3.text-center.transition-all
-                            i.bi-phone-fill.fs-1.text-primary.mb-3
-                            h4.h5 Mobile Application Development
-                            p.text-muted.small.mb-0 Native and cross-platform mobile apps built for engagement and retention.
+                        .service-card.h-100.text-center
+                            i.bi-phone-fill
+                            h4 Mobile Application Development
+                            p Native and cross-platform mobile apps built for engagement and retention.
                     .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.p-4.border.rounded-3.text-center.transition-all
-                            i.bi-bezier2.fs-1.text-primary.mb-3
-                            h4.h5 UI/UX Design
-                            p.text-muted.small.mb-0 Product design that converts users through clarity and polished interfaces.
+                        .service-card.h-100.text-center
+                            i.bi-bezier2
+                            h4 UI/UX Design
+                            p Product design that converts users through clarity and polished interfaces.
                     .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.p-4.border.rounded-3.text-center.transition-all
-                            i.bi-gear-fill.fs-1.text-primary.mb-3
-                            h4.h5 Business Process Automation
-                            p.text-muted.small.mb-0 Automation and integrations that reduce manual work and speed delivery.
+                        .service-card.h-100.text-center
+                            i.bi-gear-fill
+                            h4 Business Process Automation
+                            p Automation and integrations that reduce manual work and speed delivery.
                     .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.p-4.border.rounded-3.text-center.transition-all
-                            i.bi-plug-fill.fs-1.text-primary.mb-3
-                            h4.h5 API Development & Integration
-                            p.text-muted.small.mb-0 Secure APIs and integrations to connect your ecosystem.
+                        .service-card.h-100.text-center
+                            i.bi-plug-fill
+                            h4 API Development & Integration
+                            p Secure APIs and integrations to connect your ecosystem.
                     .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.p-4.border.rounded-3.text-center.transition-all
-                            i.bi-shield-check.fs-1.text-primary.mb-3
-                            h4.h5 Cybersecurity & Compliance
-                            p.text-muted.small.mb-0 Security reviews, threat modelling, and compliance guidance.
+                        .service-card.h-100.text-center
+                            i.bi-shield-check
+                            h4 Cybersecurity & Compliance
+                            p Security reviews, threat modelling, and compliance guidance.
 
         // Featured Projects (Z-Pattern)
-        section#portfolio.page-section.bg-light
+        section#portfolio.page-section.bg-transparent-overlay.text-white
             .container.px-4.px-lg-5
                 .text-center.mb-5
-                    h2 Featured Projects
-                    hr.divider
-                    p.lead Selected work that demonstrates our secure, scalable approach.
+                    h2.text-white Featured Projects
+                    hr.divider.divider-light
+                    p.lead.text-white-75 Selected work that demonstrates our secure, scalable approach.
                 
                 // Project 1
                 .row.gx-4.gx-lg-5.mb-5.align-items-center
                     .col-lg-7
                         img.img-fluid.rounded-3.shadow(src='assets/img/portfolio/fullsize/1.jpg', alt='Job Finder')
                     .col-lg-5
-                        .p-4
+                        .p-4.bg-white.rounded-3.shadow.text-dark
                             .badge.bg-primary.mb-2 Recruitment
                             h3.mb-3 Job Finder
                             p.text-muted
@@ -149,7 +207,7 @@ html(lang='en')
                     .col-lg-7.order-lg-2
                         img.img-fluid.rounded-3.shadow(src='assets/img/portfolio/fullsize/2.jpg', alt='Chez Moi')
                     .col-lg-5.order-lg-1
-                        .p-4
+                        .p-4.bg-white.rounded-3.shadow.text-dark
                             .badge.bg-primary.mb-2 Real Estate
                             h3.mb-3 Chez Moi
                             p.text-muted
@@ -202,10 +260,10 @@ html(lang='en')
                     .footer-social.d-flex.justify-content-center.gap-3.mt-3
                         a(href='https://www.linkedin.com', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on LinkedIn')
                             i.bi-linkedin
-                        a(href='https://www.facebook.com', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on Facebook')
+                        a(href='https://www.facebook.com/share/18j4TQiY39/', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on Facebook')
                             i.bi-facebook
-                        a(href='https://x.com', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on X')
-                            i.bi-twitter-x
+                        a(href='https://www.instagram.com/oxbiy?utm_source=qr&igsh=MWZudGhpbmVsY201eQ==', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on Instagram')
+                            i.bi-instagram
                 .small.text-center.text-muted
                     | Copyright &copy; 2026 OXBIY. All rights reserved.
 

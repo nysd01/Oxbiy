@@ -2,13 +2,41 @@
 // Buttons
 // 
 
-//- Custom XL button styling
+.btn {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+    box-shadow: 0 4px 14px rgba(0, 45, 91, 0.2);
+
+    &:hover, &:focus, &:active {
+        background-color: darken($primary, 8%);
+        border-color: darken($primary, 8%);
+        box-shadow: 0 6px 20px rgba(0, 45, 91, 0.3);
+        transform: translateY(-2px);
+    }
+}
+
+.btn-outline-primary {
+    color: $primary;
+    border: 2px solid $primary;
+    
+    &:hover {
+        background-color: $primary;
+        color: $white;
+        box-shadow: 0 4px 14px rgba(0, 45, 91, 0.2);
+        transform: translateY(-2px);
+    }
+}
+
+//- Custom XL button styling
 .btn-xl {
-    padding: 1.25rem 2.25rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 10rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
 }

@@ -3,11 +3,12 @@
 // 
 
 hr.divider {
-    height: 0.2rem;
-    max-width: 3.25rem;
-    margin: 1.5rem auto;
+    height: 3px;
+    max-width: 4rem;
+    margin: 1.5rem auto 2rem;
     background-color: $primary;
     opacity: 1;
+    border-radius: 3px;
 }
 
 hr.divider-light {
