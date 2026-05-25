@@ -20,30 +20,68 @@ body {
 //- Page section styling
 .page-section {
     padding: 8rem 0;
+    
+    @include media-breakpoint-down(md) {
+        padding: 5rem 0;
+    }
+}
+
+// Entrance Animation (Reduced motion for mobile)
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 // Modern Team Bubbles (Solid Premium Design)
 .team-bubble {
-    padding: 3rem 2rem;
-    border-radius: 2rem;
+    padding: 3.5rem 2rem;
+    border-radius: 2.5rem;
     background: $white;
-    border: 1px solid rgba(0,0,0,0.05);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
+    height: 100%;
+
+    @include media-breakpoint-down(sm) {
+        padding: 2.5rem 1.5rem;
+        border-radius: 2rem;
+    }
 
     h4 {
         color: $gray-900 !important;
-        font-weight: 700;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-top: 1rem;
+        
+        @include media-breakpoint-down(sm) {
+            font-size: 1.25rem;
+        }
     }
 
     .text-muted {
         color: $gray-600 !important;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .text-primary {
-        color: $primary !important;
+        color: $blue-accent !important;
         font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
     }
 
     &::before {
@@ -52,49 +90,120 @@ body {
         top: 0;
         left: 0;
         width: 100%;
-        height: 4px;
-        background: $primary;
+        height: 6px;
+        background: linear-gradient(90deg, $navy, $blue-accent);
         transform: scaleX(0);
-        transition: transform 0.3s ease;
+        transition: transform 0.4s ease;
+        transform-origin: left;
     }
 
     &:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 30px 60px rgba(0,45,91,0.12);
-        border-color: rgba($primary, 0.1);
+        @media (hover: hover) {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px rgba(0,45,91,0.15);
+            border-color: rgba($blue-accent, 0.1);
 
-        &::before {
-            transform: scaleX(1);
-        }
+            &::before {
+                transform: scaleX(1);
+            }
 
-        .member-icon-wrap {
-            transform: scale(1.1);
-            background: rgba($primary, 0.05);
-            border-color: $primary;
-            
-            i {
-                color: $primary;
+            .member-icon-wrap {
+                border-color: $blue-accent;
+                box-shadow: 0 0 0 8px rgba($blue-accent, 0.05);
+                
+                img {
+                    transform: scale(1.08);
+                }
             }
         }
     }
 }
 
+// Glass variant for dark backgrounds
+.bg-dark .team-bubble {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    h4 { color: $white !important; }
+    .text-muted { color: rgba(255,255,255,0.6) !important; }
+}
+
 .member-icon-wrap {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto 1.5rem;
-    background: #f8f9fa;
+    background: #f0f2f5;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+    border: 4px solid $white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    overflow: hidden;
 
-    i {
-        font-size: 4rem;
-        color: $gray-400;
+    @include media-breakpoint-down(sm) {
+        width: 150px;
+        height: 150px;
+        border-width: 3px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+}
+
+// Social Links Styling (Larger touch targets for mobile)
+.team-social-links {
+    .text-muted {
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,0.03);
+        border-radius: 50%;
         transition: all 0.3s ease;
+        text-decoration: none;
+        font-size: 1.2rem;
+
+        &:hover {
+            @media (hover: hover) {
+                background: $blue-accent;
+                color: $white !important;
+                transform: translateY(-3px) rotate(8deg);
+            }
+        }
+        
+        &:active {
+            transform: scale(0.9);
+            background: $blue-accent;
+            color: $white !important;
+        }
+    }
+}
+
+// Mobile-specific layout fixes
+@include media-breakpoint-down(md) {
+    .row.align-items-center {
+        text-align: center;
+        
+        .col-lg-7, .col-lg-5 {
+            margin-bottom: 2rem;
+        }
+        
+        .order-lg-2, .order-lg-1 {
+            order: 0 !important;
+        }
+    }
+    
+    .divider.ms-0 {
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
