@@ -5,27 +5,69 @@ html(lang='en')
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
-        meta(name='author', content='')
+        meta(name='description', content='OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products.')
+        meta(name='author', content='OXBIY')
 
-        title Creative - Start Bootstrap Theme
+        title OXBIY — Secure Digital Solutions
+
+        // Canonical URL
+        link(rel='canonical', href='https://oxbiy.com/')
+
+        // Open Graph
+        meta(property='og:type', content='website')
+        meta(property='og:site_name', content='OXBIY')
+        meta(property='og:title', content='OXBIY — Secure Digital Solutions')
+        meta(property='og:description', content='OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products.')
+        meta(property='og:url', content='https://oxbiy.com/')
+        meta(property='og:image', content='https://oxbiy.com/assets/img/bg-masthead.jpg')
+        meta(property='og:image:width', content='1600')
+        meta(property='og:image:height', content='900')
+        meta(property='og:image:alt', content='OXBIY — Secure Digital Solutions')
+
+        // Twitter Card
+        meta(name='twitter:card', content='summary_large_image')
+        meta(name='twitter:title', content='OXBIY — Secure Digital Solutions')
+        meta(name='twitter:description', content='OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products.')
+        meta(name='twitter:image', content='https://oxbiy.com/assets/img/bg-masthead.jpg')
 
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
 
+        // Preload hero poster for faster LCP
+        link(rel='preload', as='image', href='assets/img/bg-masthead.jpg')
+
         // Bootstrap Icons
-        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', rel='stylesheet')
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css', rel='stylesheet')
 
         // Google fonts
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
         link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap', rel='stylesheet')
-
-        // SimpleLightbox plugin CSS
-        link(href='https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css', rel='stylesheet')
 
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
+        // JSON-LD Organization schema
+        script(type='application/ld+json').
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "OXBIY",
+                "url": "https://oxbiy.com",
+                "logo": "https://oxbiy.com/assets/img/logo.png",
+                "description": "OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products.",
+                "telephone": "+237676887147",
+                "email": "help-support@oxbiy.com",
+                "sameAs": [
+                    "https://www.linkedin.com/in/oxbiy-company-74b356410",
+                    "https://www.facebook.com/share/18j4TQiY39/",
+                    "https://www.instagram.com/oxbiy"
+                ]
+            }
+
     body#page-top
+
+        a.skip-to-main(href='#about') Skip to main content
 
         // Navigation
         nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3
@@ -51,7 +93,7 @@ html(lang='en')
         // Masthead
         header.masthead
             // Background video
-            video.masthead-video(autoplay muted loop playsinline poster='assets/img/bg-masthead.jpg')
+            video.masthead-video(autoplay muted loop playsinline preload='none' poster='assets/img/bg-masthead.jpg')
                 source(src='/assets/video/typing-bg.mp4', type='video/mp4')
 
             .container.px-4.px-lg-5.h-100
@@ -85,7 +127,7 @@ html(lang='en')
                                 | Human-centered UI/UX design
                         a.btn.btn-primary.btn-xl(href='#services') Our Services
                     .col-lg-6
-                        img.img-fluid.rounded-3.shadow-lg(src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80', alt='OXBIY Team Collaboration')
+                        img.img-fluid.rounded-3.shadow-lg(src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80', alt='OXBIY Team Collaboration', loading='lazy')
 
         // Team
         section#team.page-section.bg-white
@@ -99,7 +141,7 @@ html(lang='en')
                     .col-lg-3.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/derek.jpg', alt='Derek Noumbissi')
+                                img(src='assets/img/team/derek.jpg', alt='Derek Noumbissi', loading='lazy')
                             h4 Derek Noumbissi
                             p.text-primary Chief Financial Officer
 
@@ -107,7 +149,7 @@ html(lang='en')
                     .col-lg-3.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/fayssal.jpg', alt='Fayssal Ndassa')
+                                img(src='assets/img/team/fayssal.jpg', alt='Fayssal Ndassa', loading='lazy')
                             h4 Fayssal Ndassa
                             p.text-primary Head of Marketing & Communications
 
@@ -115,7 +157,7 @@ html(lang='en')
                     .col-lg-3.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/sacha.jpg', alt='Sacha Mawabo')
+                                img(src='assets/img/team/sacha.jpg', alt='Sacha Mawabo', loading='lazy')
                             h4 Sacha Mawabo
                             p.text-primary Head of Customer Experience & Operations
 
@@ -123,7 +165,7 @@ html(lang='en')
                     .col-lg-3.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/chofor.jpg', alt='Chofor Clarkson')
+                                img(src='assets/img/team/chofor.jpg', alt='Chofor Clarkson', loading='lazy')
                             h4 Chofor Clarkson
                             p.text-primary Chief Technology Officer
 
@@ -131,7 +173,7 @@ html(lang='en')
                     .col-lg-3.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/brondon.jpg', alt='Brondon Nouyeutchui')
+                                img(src='assets/img/team/brondon.jpg', alt='Brondon Nouyeutchui', loading='lazy')
                             h4 Brondon Nouyeutchui
                             p.text-primary IS Security & Audit Specialist
 
@@ -139,15 +181,15 @@ html(lang='en')
                     .col-lg-3.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/destin.jpg', alt='Destin Nedjou')
+                                img(src='assets/img/team/destin.jpg', alt='Destin Nedjou', loading='lazy')
                             h4 Destin Nedjou
-                            p.text-primary Network Security Engineer
+                            p.text-primary Chief DevSecOps Engineer
 
                     // Team Member: Arrey Osambenghe
                     .col-lg-3.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/arrey.jpg', alt='Arrey Osambenghe')
+                                img(src='assets/img/team/arrey.jpg', alt='Arrey Osambenghe', loading='lazy')
                             h4 Arrey Osambenghe
                             p.text-primary Software Engineer & Developer
 
@@ -200,11 +242,11 @@ html(lang='en')
                     h2.text-white Featured Projects
                     hr.divider.divider-light
                     p.lead.text-white-75 Selected work that demonstrates our secure, scalable approach.
-                
+
                 // Project 1
                 .row.gx-4.gx-lg-5.mb-5.align-items-center.fade-up
                     .col-lg-7
-                        img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80', alt='Job Finder - Team of Black Professionals in a modern African tech hub')
+                        img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80', alt='Job Finder — Recruitment Platform', loading='lazy')
                     .col-lg-5
                         .p-4.bg-white.rounded-3.shadow.text-dark
                             .badge.bg-primary.mb-2 Recruitment
@@ -216,7 +258,7 @@ html(lang='en')
                 // Project 2
                 .row.gx-4.gx-lg-5.align-items-center.fade-up
                     .col-lg-7.order-lg-2
-                        img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80', alt='Chez Moi - Modern African Interior Design')
+                        img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80', alt='Chez Moi — Real Estate Platform', loading='lazy')
                     .col-lg-5.order-lg-1
                         .p-4.bg-white.rounded-3.shadow.text-dark
                             .badge.bg-primary.mb-2 Real Estate
@@ -240,20 +282,31 @@ html(lang='en')
                         h2.mt-0 Let's Get In Touch
                         hr.divider
                         p.text-muted.mb-5
-                            | Have a project in mind? Fill the form and we'll reach out — or email help-support@oxbiy.com directly.
+                            | Have a project in mind? Fill the form below and we'll reach out within 24 hours.
                 .row.gx-4.gx-lg-5.justify-content-center.mb-5
                     .col-lg-6
-                        form#contactForm(data-sb-form-api-token='API_TOKEN')
+                        form#contactForm(action='https://formspree.io/f/xpqnygdw', method='POST', novalidate)
                             .form-floating.mb-3
-                                input#name.form-control(type='text', placeholder='Full name', data-sb-validations='required')
+                                input#name.form-control(type='text', name='name', placeholder='Full name', required)
                                 label(for='name') Full name
+                                .invalid-feedback Please enter your full name.
                             .form-floating.mb-3
-                                input#email.form-control(type='email', placeholder='name@example.com', data-sb-validations='required,email')
+                                input#email.form-control(type='email', name='email', placeholder='name@example.com', required)
                                 label(for='email') Email address
+                                .invalid-feedback Please enter a valid email address.
                             .form-floating.mb-3
-                                textarea#message.form-control(placeholder='Your message', style='height: 10rem;', data-sb-validations='required')
+                                textarea#message.form-control(name='message', placeholder='Your message', style='height: 10rem;', required)
                                 label(for='message') Message
-                            .d-grid
+                                .invalid-feedback Please enter a message.
+                            #formSuccess.d-none.alert.alert-success.mt-3(role='status')
+                                i.bi-check-circle-fill.me-2
+                                | Your message has been sent! We'll be in touch soon.
+                            #formError.d-none.alert.alert-danger.mt-3(role='alert')
+                                i.bi-exclamation-triangle-fill.me-2
+                                | Something went wrong. Please email us directly at
+                                |
+                                a.alert-link(href='mailto:help-support@oxbiy.com') help-support@oxbiy.com
+                            .d-grid.mt-3
                                 button#submitButton.btn.btn-primary.btn-xl(type='submit') Send Message
 
                 .row.gx-4.gx-lg-5.justify-content-center
@@ -269,7 +322,7 @@ html(lang='en')
                     .fw-bold.text-dark OXBIY
                     .text-muted OXBIY builds secure, scalable digital solutions for businesses and individuals.
                     .footer-social.d-flex.justify-content-center.gap-3.mt-3
-                        a(href='https://www.linkedin.com', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on LinkedIn')
+                        a(href='https://www.linkedin.com/in/oxbiy-company-74b356410?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on LinkedIn')
                             i.bi-linkedin
                         a(href='https://www.facebook.com/share/18j4TQiY39/', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on Facebook')
                             i.bi-facebook
@@ -281,15 +334,5 @@ html(lang='en')
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
 
-        // SimpleLightbox plugin JS
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js')
-
         // Core theme JS
         script(src='js/scripts.js')
-
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')

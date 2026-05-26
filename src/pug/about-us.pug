@@ -5,24 +5,46 @@ html(lang='en')
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='Meet the talented team behind OXBIY.')
+        meta(name='description', content='Meet the talented team behind OXBIY — 7 specialists in cybersecurity, engineering, and digital innovation.')
         meta(name='author', content='OXBIY')
 
-        title About Our Team - OXBIY
+        title Meet Our Team — OXBIY
+
+        // Canonical URL
+        link(rel='canonical', href='https://oxbiy.com/about-us.html')
+
+        // Open Graph
+        meta(property='og:type', content='website')
+        meta(property='og:site_name', content='OXBIY')
+        meta(property='og:title', content='Meet Our Team — OXBIY')
+        meta(property='og:description', content='Meet the talented team behind OXBIY — 7 specialists in cybersecurity, engineering, and digital innovation.')
+        meta(property='og:url', content='https://oxbiy.com/about-us.html')
+        meta(property='og:image', content='https://oxbiy.com/assets/img/bg-masthead.jpg')
+        meta(property='og:image:alt', content='OXBIY Team')
+
+        // Twitter Card
+        meta(name='twitter:card', content='summary_large_image')
+        meta(name='twitter:title', content='Meet Our Team — OXBIY')
+        meta(name='twitter:description', content='Meet the talented team behind OXBIY — 7 specialists in cybersecurity, engineering, and digital innovation.')
+        meta(name='twitter:image', content='https://oxbiy.com/assets/img/bg-masthead.jpg')
 
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
 
         // Bootstrap Icons
-        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', rel='stylesheet')
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css', rel='stylesheet')
 
         // Google fonts
+        link(rel='preconnect', href='https://fonts.googleapis.com')
+        link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
         link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap', rel='stylesheet')
 
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
     body#page-top
+
+        a.skip-to-main(href='#team-section') Skip to main content
 
         // Navigation
         nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3.navbar-shrink
@@ -54,7 +76,7 @@ html(lang='en')
                             | Dedicated professionals committed to engineering secure and scalable digital futures.
 
         // Team Section
-        section.page-section.bg-dark.text-white(style='background: linear-gradient(135deg, #001a33 0%, #002d5b 100%);')
+        section#team-section.page-section.bg-dark.text-white(style='background: linear-gradient(135deg, #001a33 0%, #002d5b 100%);')
             .container.px-4.px-lg-5
                 .text-center.mb-5
                     h2.text-white Leadership & Engineering
@@ -66,105 +88,105 @@ html(lang='en')
                     .col-lg-4.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/derek.jpg', alt='Derek Noumbissi')
+                                img(src='assets/img/team/derek.jpg', alt='Derek Noumbissi', loading='lazy')
                             h4 Derek Noumbissi
                             p.text-primary Chief Financial Officer
                             p.text-muted.small
                                 | Managing OXBIY's financial strategy, capital allocation, and ensuring long-term fiscal health.
                             .team-social-links.d-flex.justify-content-center.gap-3.mt-3
-                                a.text-muted(href='#')
+                                a.text-muted(href='https://www.linkedin.com/in/noumbissi-yamdjeuson-stanley-derek-ab8917236?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer', aria-label='Derek on LinkedIn')
                                     i.bi-linkedin
-                                a.text-muted(href='#')
+                                a.text-muted(href='mailto:nysddereck@oxbiy.com', aria-label='Email Derek')
                                     i.bi-envelope
 
                     // Team Member: Fayssal Ndassa
                     .col-lg-4.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/fayssal.jpg', alt='Fayssal Ndassa')
+                                img(src='assets/img/team/fayssal.jpg', alt='Fayssal Ndassa', loading='lazy')
                             h4 Fayssal Ndassa
                             p.text-primary Head of Marketing & Communications
                             p.text-muted.small
                                 | Driving brand presence and strategic communications to position OXBIY as a market leader.
                             .team-social-links.d-flex.justify-content-center.gap-3.mt-3
-                                a.text-muted(href='https://www.linkedin.com/in/ndassa-njoya-fils-fayssal-a2baa6314?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer')
+                                a.text-muted(href='https://www.linkedin.com/in/ndassa-njoya-fils-fayssal-a2baa6314?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer', aria-label='Fayssal on LinkedIn')
                                     i.bi-linkedin
-                                a.text-muted(href='https://github.com/KingKayssal', target='_blank', rel='noreferrer')
+                                a.text-muted(href='https://github.com/KingKayssal', target='_blank', rel='noreferrer', aria-label='Fayssal on GitHub')
                                     i.bi-github
 
                     // Team Member: Sacha Mawabo
                     .col-lg-4.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/sacha.jpg', alt='Sacha Mawabo')
+                                img(src='assets/img/team/sacha.jpg', alt='Sacha Mawabo', loading='lazy')
                             h4 Sacha Mawabo
                             p.text-primary Head of Customer Experience & Operations
                             p.text-muted.small
                                 | Ensuring operational excellence and delivering seamless, client-centric service experiences.
                             .team-social-links.d-flex.justify-content-center.gap-3.mt-3
-                                a.text-muted(href='#')
+                                a.text-muted(href='https://www.linkedin.com/in/martiale-pierrine-sacha-kounou-mawabo-86367a3b6?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer', aria-label='Sacha on LinkedIn')
                                     i.bi-linkedin
-                                a.text-muted(href='#')
+                                a.text-muted(href='mailto:Help-support@oxbiy.com', aria-label='Email Sacha')
                                     i.bi-envelope
 
                     // Team Member: Chofor Clarkson
                     .col-lg-4.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/chofor.jpg', alt='Chofor Clarkson')
+                                img(src='assets/img/team/chofor.jpg', alt='Chofor Clarkson', loading='lazy')
                             h4 Chofor Clarkson
                             p.text-primary Chief Technology Officer
                             p.text-muted.small
                                 | Strategic technical leader overseeing OXBIY's infrastructure and long-term technological roadmap.
                             .team-social-links.d-flex.justify-content-center.gap-3.mt-3
-                                a.text-muted(href='#')
-                                    i.bi-linkedin
-                                a.text-muted(href='#')
+                                a.text-muted(href='https://github.com/Choclark', target='_blank', rel='noreferrer', aria-label='Chofor on GitHub')
+                                    i.bi-github
+                                a.text-muted(href='mailto:chofor.clarkson@oxbiy.com', aria-label='Email Chofor')
                                     i.bi-envelope
 
                     // Team Member: Brondon Nouyeutchui
                     .col-lg-4.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/brondon.jpg', alt='Brondon Nouyeutchui')
+                                img(src='assets/img/team/brondon.jpg', alt='Brondon Nouyeutchui', loading='lazy')
                             h4 Brondon Nouyeutchui
                             p.text-primary IS Security & Audit Specialist
                             p.text-muted.small
                                 | Expert in system auditing and cybersecurity frameworks, ensuring total integrity and compliance.
                             .team-social-links.d-flex.justify-content-center.gap-3.mt-3
-                                a.text-muted(href='https://www.linkedin.com/in/brandon-nouyeutchuiyoumbi-692a8424a?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer')
+                                a.text-muted(href='https://www.linkedin.com/in/brandon-nouyeutchuiyoumbi-692a8424a?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer', aria-label='Brondon on LinkedIn')
                                     i.bi-linkedin
-                                a.text-muted(href='https://github.com/Nouyeutchui28', target='_blank', rel='noreferrer')
+                                a.text-muted(href='https://github.com/Nouyeutchui28', target='_blank', rel='noreferrer', aria-label='Brondon on GitHub')
                                     i.bi-github
 
                     // Team Member: Destin Nedjou
                     .col-lg-4.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/destin.jpg', alt='Destin Nedjou')
+                                img(src='assets/img/team/destin.jpg', alt='Destin Nedjou', loading='lazy')
                             h4 Destin Nedjou
-                            p.text-primary Network & Access Security Engineer
+                            p.text-primary Chief DevSecOps Engineer
                             p.text-muted.small
-                                | Architecting secure network infrastructures and robust access control systems.
+                                | Bridging development, security, and operations to embed security at every stage of the software delivery pipeline.
                             .team-social-links.d-flex.justify-content-center.gap-3.mt-3
-                                a.text-muted(href='https://www.linkedin.com/in/nedjou-destin-tresor-157494353?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer')
+                                a.text-muted(href='https://www.linkedin.com/in/nedjou-destin-tresor-157494353?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer', aria-label='Destin on LinkedIn')
                                     i.bi-linkedin
-                                a.text-muted(href='#')
+                                a.text-muted(href='mailto:nedjoutresor@oxbiy.com', aria-label='Email Destin')
                                     i.bi-envelope
 
                     // Team Member: Arrey Osambenghe
                     .col-lg-4.col-md-6.mb-5.fade-up
                         .team-bubble.text-center
                             .member-icon-wrap
-                                img(src='assets/img/team/arrey.jpg', alt='Arrey Osambenghe')
+                                img(src='assets/img/team/arrey.jpg', alt='Arrey Osambenghe', loading='lazy')
                             h4 Arrey Osambenghe
                             p.text-primary Software Engineer & Developer
                             p.text-muted.small
                                 | Engineering scalable, secure software solutions and modern digital platforms.
                             .team-social-links.d-flex.justify-content-center.gap-3.mt-3
-                                a.text-muted(href='https://www.linkedin.com/in/arrey-etta-osambenghe-632bb12b3/', target='_blank', rel='noreferrer')
+                                a.text-muted(href='https://www.linkedin.com/in/arrey-etta-osambenghe-632bb12b3/', target='_blank', rel='noreferrer', aria-label='Arrey on LinkedIn')
                                     i.bi-linkedin
-                                a.text-muted(href='https://github.com/ArreyOsambenghe', target='_blank', rel='noreferrer')
+                                a.text-muted(href='https://github.com/ArreyOsambenghe', target='_blank', rel='noreferrer', aria-label='Arrey on GitHub')
                                     i.bi-github
 
         // Footer
@@ -184,7 +206,7 @@ html(lang='en')
                                 a.text-white-50(href='index.html#contact') Contact
                     .col-lg-4.text-center.text-lg-end
                         .d-flex.justify-content-center.justify-content-lg-end.gap-3
-                            a.text-white-50(href='#', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on LinkedIn')
+                            a.text-white-50(href='https://www.linkedin.com/in/oxbiy-company-74b356410?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on LinkedIn')
                                 i.bi-linkedin.fs-4
                             a.text-white-50(href='https://www.facebook.com/share/18j4TQiY39/', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on Facebook')
                                 i.bi-facebook.fs-4

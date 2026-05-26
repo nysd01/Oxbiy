@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: oxbiy
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: RESEND_API_KEY
+        sync: false          # set manually in Render dashboard
+      - key: EMAIL_FROM
+        value: "OXBIY <noreply@oxbiy.com>"
+      - key: NODE_VERSION
+        value: "18"

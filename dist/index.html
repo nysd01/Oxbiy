@@ -3,21 +3,55 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Creative - Start Bootstrap Theme</title>
+        <meta name="description" content="OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products." />
+        <meta name="author" content="OXBIY" />
+        <title>OXBIY — Secure Digital Solutions</title>
+        <!-- Canonical URL-->
+        <link rel="canonical" href="https://oxbiy.com/" />
+        <!-- Open Graph-->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="OXBIY" />
+        <meta property="og:title" content="OXBIY — Secure Digital Solutions" />
+        <meta property="og:description" content="OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products." />
+        <meta property="og:url" content="https://oxbiy.com/" />
+        <meta property="og:image" content="https://oxbiy.com/assets/img/bg-masthead.jpg" />
+        <meta property="og:image:width" content="1600" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="OXBIY — Secure Digital Solutions" />
+        <!-- Twitter Card-->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="OXBIY — Secure Digital Solutions" />
+        <meta name="twitter:description" content="OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products." />
+        <meta name="twitter:image" content="https://oxbiy.com/assets/img/bg-masthead.jpg" />
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Preload hero poster for faster LCP-->
+        <link rel="preload" as="image" href="assets/img/bg-masthead.jpg" />
         <!-- Bootstrap Icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
-        <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- JSON-LD Organization schema-->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "OXBIY",
+                "url": "https://oxbiy.com",
+                "logo": "https://oxbiy.com/assets/img/logo.png",
+                "description": "OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products.",
+                "telephone": "+237676887147",
+                "email": "help-support@oxbiy.com",
+                "sameAs": ["https://www.linkedin.com/in/oxbiy-company-74b356410", "https://www.facebook.com/share/18j4TQiY39/", "https://www.instagram.com/oxbiy"]
+            }
+        </script>
     </head>
     <body id="page-top">
+        <a class="skip-to-main" href="#about">Skip to main content</a>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -40,7 +74,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <!-- Background video-->
-            <video class="masthead-video" autoplay muted loop playsinline poster="assets/img/bg-masthead.jpg"><source src="/assets/video/typing-bg.mp4" type="video/mp4" /></video>
+            <video class="masthead-video" autoplay muted loop playsinline preload="none" poster="assets/img/bg-masthead.jpg"><source src="/assets/video/typing-bg.mp4" type="video/mp4" /></video>
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
@@ -78,7 +112,7 @@
                         </ul>
                         <a class="btn btn-primary btn-xl" href="#services">Our Services</a>
                     </div>
-                    <div class="col-lg-6"><img class="img-fluid rounded-3 shadow-lg" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="OXBIY Team Collaboration" /></div>
+                    <div class="col-lg-6"><img class="img-fluid rounded-3 shadow-lg" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="OXBIY Team Collaboration" loading="lazy" /></div>
                 </div>
             </div>
         </section>
@@ -94,7 +128,7 @@
                     <!-- Team Member: Derek Noumbissi-->
                     <div class="col-lg-3 col-md-6 mb-5 fade-up">
                         <div class="team-bubble text-center">
-                            <div class="member-icon-wrap"><img src="assets/img/team/derek.jpg" alt="Derek Noumbissi" /></div>
+                            <div class="member-icon-wrap"><img src="assets/img/team/derek.jpg" alt="Derek Noumbissi" loading="lazy" /></div>
                             <h4>Derek Noumbissi</h4>
                             <p class="text-primary">Chief Financial Officer</p>
                         </div>
@@ -102,7 +136,7 @@
                     <!-- Team Member: Fayssal Ndassa-->
                     <div class="col-lg-3 col-md-6 mb-5 fade-up">
                         <div class="team-bubble text-center">
-                            <div class="member-icon-wrap"><img src="assets/img/team/fayssal.jpg" alt="Fayssal Ndassa" /></div>
+                            <div class="member-icon-wrap"><img src="assets/img/team/fayssal.jpg" alt="Fayssal Ndassa" loading="lazy" /></div>
                             <h4>Fayssal Ndassa</h4>
                             <p class="text-primary">Head of Marketing & Communications</p>
                         </div>
@@ -110,7 +144,7 @@
                     <!-- Team Member: Sacha Mawabo-->
                     <div class="col-lg-3 col-md-6 mb-5 fade-up">
                         <div class="team-bubble text-center">
-                            <div class="member-icon-wrap"><img src="assets/img/team/sacha.jpg" alt="Sacha Mawabo" /></div>
+                            <div class="member-icon-wrap"><img src="assets/img/team/sacha.jpg" alt="Sacha Mawabo" loading="lazy" /></div>
                             <h4>Sacha Mawabo</h4>
                             <p class="text-primary">Head of Customer Experience & Operations</p>
                         </div>
@@ -118,7 +152,7 @@
                     <!-- Team Member: Chofor Clarkson-->
                     <div class="col-lg-3 col-md-6 mb-5 fade-up">
                         <div class="team-bubble text-center">
-                            <div class="member-icon-wrap"><img src="assets/img/team/chofor.jpg" alt="Chofor Clarkson" /></div>
+                            <div class="member-icon-wrap"><img src="assets/img/team/chofor.jpg" alt="Chofor Clarkson" loading="lazy" /></div>
                             <h4>Chofor Clarkson</h4>
                             <p class="text-primary">Chief Technology Officer</p>
                         </div>
@@ -126,7 +160,7 @@
                     <!-- Team Member: Brondon Nouyeutchui-->
                     <div class="col-lg-3 col-md-6 mb-5 fade-up">
                         <div class="team-bubble text-center">
-                            <div class="member-icon-wrap"><img src="assets/img/team/brondon.jpg" alt="Brondon Nouyeutchui" /></div>
+                            <div class="member-icon-wrap"><img src="assets/img/team/brondon.jpg" alt="Brondon Nouyeutchui" loading="lazy" /></div>
                             <h4>Brondon Nouyeutchui</h4>
                             <p class="text-primary">IS Security & Audit Specialist</p>
                         </div>
@@ -134,15 +168,15 @@
                     <!-- Team Member: Destin Nedjou-->
                     <div class="col-lg-3 col-md-6 mb-5 fade-up">
                         <div class="team-bubble text-center">
-                            <div class="member-icon-wrap"><img src="assets/img/team/destin.jpg" alt="Destin Nedjou" /></div>
+                            <div class="member-icon-wrap"><img src="assets/img/team/destin.jpg" alt="Destin Nedjou" loading="lazy" /></div>
                             <h4>Destin Nedjou</h4>
-                            <p class="text-primary">Network Security Engineer</p>
+                            <p class="text-primary">Chief DevSecOps Engineer</p>
                         </div>
                     </div>
                     <!-- Team Member: Arrey Osambenghe-->
                     <div class="col-lg-3 col-md-6 mb-5 fade-up">
                         <div class="team-bubble text-center">
-                            <div class="member-icon-wrap"><img src="assets/img/team/arrey.jpg" alt="Arrey Osambenghe" /></div>
+                            <div class="member-icon-wrap"><img src="assets/img/team/arrey.jpg" alt="Arrey Osambenghe" loading="lazy" /></div>
                             <h4>Arrey Osambenghe</h4>
                             <p class="text-primary">Software Engineer & Developer</p>
                         </div>
@@ -215,7 +249,7 @@
                 </div>
                 <!-- Project 1-->
                 <div class="row gx-4 gx-lg-5 mb-5 align-items-center fade-up">
-                    <div class="col-lg-7"><img class="img-fluid rounded-3 shadow" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Job Finder - Team of Black Professionals in a modern African tech hub" /></div>
+                    <div class="col-lg-7"><img class="img-fluid rounded-3 shadow" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Job Finder — Recruitment Platform" loading="lazy" /></div>
                     <div class="col-lg-5">
                         <div class="p-4 bg-white rounded-3 shadow text-dark">
                             <div class="badge bg-primary mb-2">Recruitment</div>
@@ -227,7 +261,7 @@
                 </div>
                 <!-- Project 2-->
                 <div class="row gx-4 gx-lg-5 align-items-center fade-up">
-                    <div class="col-lg-7 order-lg-2"><img class="img-fluid rounded-3 shadow" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Chez Moi - Modern African Interior Design" /></div>
+                    <div class="col-lg-7 order-lg-2"><img class="img-fluid rounded-3 shadow" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Chez Moi — Real Estate Platform" loading="lazy" /></div>
                     <div class="col-lg-5 order-lg-1">
                         <div class="p-4 bg-white rounded-3 shadow text-dark">
                             <div class="badge bg-primary mb-2">Real Estate</div>
@@ -254,25 +288,37 @@
                     <div class="col-lg-8 col-xl-6 text-center">
                         <h2 class="mt-0">Let's Get In Touch</h2>
                         <hr class="divider" />
-                        <p class="text-muted mb-5">Have a project in mind? Fill the form and we'll reach out — or email help-support@oxbiy.com directly.</p>
+                        <p class="text-muted mb-5">Have a project in mind? Fill the form below and we'll reach out within 24 hours.</p>
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                     <div class="col-lg-6">
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <form id="contactForm" action="https://formspree.io/f/xpqnygdw" method="POST" novalidate>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Full name" data-sb-validations="required" />
+                                <input class="form-control" id="name" type="text" name="name" placeholder="Full name" required />
                                 <label for="name">Full name</label>
+                                <div class="invalid-feedback">Please enter your full name.</div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" required />
                                 <label for="email">Email address</label>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" placeholder="Your message" style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message" name="message" placeholder="Your message" style="height: 10rem" required></textarea>
                                 <label for="message">Message</label>
+                                <div class="invalid-feedback">Please enter a message.</div>
                             </div>
-                            <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Send Message</button></div>
+                            <div class="d-none alert alert-success mt-3" id="formSuccess" role="status">
+                                <i class="bi-check-circle-fill me-2"></i>
+                                Your message has been sent! We'll be in touch soon.
+                            </div>
+                            <div class="d-none alert alert-danger mt-3" id="formError" role="alert">
+                                <i class="bi-exclamation-triangle-fill me-2"></i>
+                                Something went wrong. Please email us directly at
+                                <a class="alert-link" href="mailto:help-support@oxbiy.com">help-support@oxbiy.com</a>
+                            </div>
+                            <div class="d-grid mt-3"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Send Message</button></div>
                         </form>
                     </div>
                 </div>
@@ -292,7 +338,7 @@
                     <div class="fw-bold text-dark">OXBIY</div>
                     <div class="text-muted">OXBIY builds secure, scalable digital solutions for businesses and individuals.</div>
                     <div class="footer-social d-flex justify-content-center gap-3 mt-3">
-                        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="Follow OXBIY on LinkedIn"><i class="bi-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/oxbiy-company-74b356410?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noreferrer" aria-label="Follow OXBIY on LinkedIn"><i class="bi-linkedin"></i></a>
                         <a href="https://www.facebook.com/share/18j4TQiY39/" target="_blank" rel="noreferrer" aria-label="Follow OXBIY on Facebook"><i class="bi-facebook"></i></a>
                         <a href="https://www.instagram.com/oxbiy?utm_source=qr&amp;igsh=MWZudGhpbmVsY201eQ==" target="_blank" rel="noreferrer" aria-label="Follow OXBIY on Instagram"><i class="bi-instagram"></i></a>
                     </div>
@@ -302,14 +348,7 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>

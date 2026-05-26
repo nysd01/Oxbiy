@@ -1,10 +1,10 @@
-// 
+//
 // Global
-// 
+//
 
 // Scroll padding for all scroll targets on page used with
 // native CSS smooth scrolling
-// 
+//
 // https://caniuse.com/?search=scroll-padding
 
 html {
@@ -20,26 +20,67 @@ body {
 //- Page section styling
 .page-section {
     padding: 8rem 0;
-    
+
     @include media-breakpoint-down(md) {
         padding: 5rem 0;
     }
 }
 
-// Entrance Animation (Reduced motion for mobile)
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+// Skip navigation link for keyboard users
+.skip-to-main {
+    position: fixed;
+    top: -100%;
+    left: 1.5rem;
+    z-index: 10000;
+    background: $blue-accent;
+    color: $white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 0 0.75rem 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: top 0.2s ease;
+
+    &:focus {
+        top: 0;
+        outline: 3px solid darken($blue-accent, 20%);
+        outline-offset: 2px;
     }
-    to {
+}
+
+// Global keyboard focus-visible styles
+:focus-visible {
+    outline: 3px solid $blue-accent !important;
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+// Scroll-triggered entrance animation
+// Elements start hidden; JS adds .in-view when they enter the viewport
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &.in-view {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.fade-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+// Respect the user's motion preference
+@media (prefers-reduced-motion: reduce) {
+    .fade-up {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
 }
 
 // Modern Team Bubbles (Solid Premium Design)
@@ -64,7 +105,7 @@ body {
         font-weight: 800;
         letter-spacing: -0.02em;
         margin-top: 1rem;
-        
+
         @include media-breakpoint-down(sm) {
             font-size: 1.25rem;
         }
@@ -110,7 +151,7 @@ body {
             .member-icon-wrap {
                 border-color: $blue-accent;
                 box-shadow: 0 0 0 8px rgba($blue-accent, 0.05);
-                
+
                 img {
                     transform: scale(1.08);
                 }
@@ -124,7 +165,7 @@ body {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    
+
     h4 { color: $white !important; }
     .text-muted { color: rgba(255,255,255,0.6) !important; }
 }
@@ -178,7 +219,7 @@ body {
                 transform: translateY(-3px) rotate(8deg);
             }
         }
-        
+
         &:active {
             transform: scale(0.9);
             background: $blue-accent;
@@ -191,16 +232,16 @@ body {
 @include media-breakpoint-down(md) {
     .row.align-items-center {
         text-align: center;
-        
+
         .col-lg-7, .col-lg-5 {
             margin-bottom: 2rem;
         }
-        
+
         .order-lg-2, .order-lg-1 {
             order: 0 !important;
         }
     }
-    
+
     .divider.ms-0 {
         margin-left: auto !important;
         margin-right: auto !important;
@@ -260,7 +301,7 @@ body {
         &::after {
             height: 100%;
         }
-        
+
         i {
             transform: scale(1.1) rotate(5deg);
         }
@@ -275,7 +316,7 @@ body {
 }
 
 .project-card {
-    background: $white; // Keep boxes solid
+    background: $white;
     border-radius: 1.5rem;
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.08);
@@ -295,5 +336,5 @@ body {
 
 // Custom utilities for this theme
 .text-white-75 {
-    color: fade-out($white, 0.25) !important;
+    color: rgba($white, 0.75) !important;
 }

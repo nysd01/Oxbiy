@@ -3,13 +3,15 @@
     "name": "startbootstrap-creative",
     "version": "7.0.7",
     "scripts": {
-        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
+        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets && npm run build:static",
         "build:assets": "node scripts/build-assets.js",
+        "build:static": "node scripts/build-static.js",
         "build:pug": "node scripts/build-pug.js",
         "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
         "clean": "node scripts/clean.js",
         "start": "npm run build && node scripts/start.js",
+        "serve": "node server.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
     },
     "description": "Creative is a stylish one page HTML theme built with Bootstrap.",
@@ -38,17 +40,19 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-creative.git"
     },
     "dependencies": {
-        "bootstrap": "5.2.3"
+        "bootstrap": "5.2.3",
+        "dotenv": "^16.6.1",
+        "express": "^4.19.2"
     },
     "devDependencies": {
         "autoprefixer": "10.4.14",
-        "browser-sync": "2.29.1",
-        "chokidar": "3.5.3",
+        "browser-sync": "^3.0.4",
+        "chokidar": "3.6.0",
         "concurrently": "6.3.0",
-        "postcss": "8.4.21",
-        "prettier": "2.8.6",
-        "pug": "3.0.2",
-        "sass": "1.60.0",
+        "postcss": "^8.5.15",
+        "prettier": "2.8.8",
+        "pug": "^3.0.4",
+        "sass": "1.77.8",
         "shelljs": "0.8.5",
         "upath": "2.0.1"
     }
