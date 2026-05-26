@@ -10,7 +10,8 @@
         "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
         "clean": "node scripts/clean.js",
-        "start": "npm run build && node scripts/start.js",
+        "start": "npm run build && node server.js",
+        "dev": "npm run build && node scripts/start.js",
         "serve": "node server.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
     },
