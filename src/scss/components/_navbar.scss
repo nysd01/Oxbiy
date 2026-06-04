@@ -1,37 +1,34 @@
-// 
+//
 // Navbar
-// 
+//
 
 #mainNav {
-    box-shadow: $box-shadow;
-    background-color: $white;
-    transition: all 0.3s ease;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
     padding-top: 1rem;
     padding-bottom: 1rem;
 
     .navbar-brand {
-        font-family: $font-family-sans-serif;
-        font-weight: $font-weight-bold;
+        font-family: $font-family-display;
+        font-weight: 800;
         color: $gray-900;
 
         .brand-name {
             font-weight: 800;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
         }
 
         .logo {
             display: block;
             width: auto;
-            height: 2.5rem;
+            height: 2.25rem;
             object-fit: contain;
         }
     }
 
-    // Modern Mobile Toggle
+    // Animated hamburger
     .navbar-toggler {
         border: none;
         padding: 0.5rem;
-        transition: transform 0.3s ease;
         outline: none !important;
         box-shadow: none !important;
 
@@ -47,90 +44,94 @@
 
             &::before, &::after {
                 content: '';
-                width: 24px;
+                width: 22px;
                 height: 2px;
                 background-color: $gray-900;
                 position: absolute;
-                transition: all 0.3s ease;
+                border-radius: 2px;
+                transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             }
 
             &::before { transform: translateY(-6px); }
-            &::after { transform: translateY(6px); }
+            &::after  { transform: translateY(6px); }
         }
 
-        &:not(.collapsed) {
-            .navbar-toggler-icon {
-                &::before { transform: rotate(45deg); }
-                &::after { transform: rotate(-45deg); }
-            }
+        &:not(.collapsed) .navbar-toggler-icon {
+            &::before { transform: rotate(45deg); }
+            &::after  { transform: rotate(-45deg); }
         }
     }
 
-    // Modern Mobile Menu (Dropdown)
+    // Mobile dropdown
     @include media-breakpoint-down(lg) {
         .navbar-collapse {
             margin-top: 1rem;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,0,0,0.05);
-            
-            .navbar-nav {
-                .nav-item {
-                    .nav-link {
-                        font-size: 1.1rem;
-                        padding: 1rem 0;
-                        border-bottom: 1px solid rgba(0,0,0,0.05);
-                        color: $gray-900;
-                        font-weight: 600;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
+            background: rgba($white, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 1.25rem;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            border: 1px solid rgba(0,0,0,0.06);
 
-                        &::after {
-                            content: '\F285';
-                            font-family: 'bootstrap-icons';
-                            font-size: 0.8rem;
-                            opacity: 0.5;
-                        }
+            .nav-item .nav-link {
+                font-size: 1rem;
+                padding: 0.875rem 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+                color: $gray-900;
+                font-weight: 600;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: color 0.2s ease, padding-left 0.2s ease;
 
-                        &:hover, &:active {
-                            color: $blue-accent;
-                            padding-left: 0.5rem;
-                        }
-                    }
-
-                    &:last-child .nav-link {
-                        border-bottom: none;
-                    }
+                &::after {
+                    content: '\F285';
+                    font-family: 'bootstrap-icons';
+                    font-size: 0.75rem;
+                    opacity: 0.4;
                 }
+
+                &:hover, &.active { color: $blue-accent; padding-left: 0.5rem; }
+
+                &.active { font-weight: 700; }
             }
+
+            .nav-item:last-child .nav-link { border-bottom: none; }
         }
     }
 
-    .navbar-nav {
-        .nav-item {
-            .nav-link {
-                color: $gray-600;
-                font-family: $font-family-sans-serif;
-                font-weight: $font-weight-bold;
-                font-size: 0.9rem;
-                transition: all 0.3s ease;
+    // Desktop nav links
+    .navbar-nav .nav-item .nav-link {
+        color: $gray-600;
+        font-family: $font-family-display;
+        font-weight: 600;
+        font-size: 0.875rem;
+        letter-spacing: 0.01em;
+        transition: color 0.25s ease;
+        position: relative;
+        padding-bottom: 0.25rem;
 
-                &:hover,
-                &:active {
-                    color: $blue-accent;
-                }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: $blue-accent;
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-                &.active {
-                    color: $blue-accent !important;
-                }
-            }
+        &:hover, &.active {
+            color: $blue-accent;
+            &::after { width: 20px; }
         }
     }
 
+    // Desktop: transparent over hero
     @include media-breakpoint-up(lg) {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
@@ -138,24 +139,40 @@
         background-color: transparent;
 
         .navbar-brand {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba($white, 0.9);
             &:hover { color: $white; }
+        }
+
+        .navbar-toggler .navbar-toggler-icon {
+            &::before, &::after { background-color: $white; }
         }
 
         .navbar-nav .nav-item .nav-link {
-            color: rgba(255, 255, 255, 0.8);
-            padding: 0 1.25rem;
-            &:hover { color: $white; }
+            color: rgba($white, 0.8);
+            padding: 0.25rem 1rem;
+            &:hover, &.active { color: $white; }
         }
 
+        // Frosted-glass scroll state
         &.navbar-shrink {
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
-            background-color: $white;
-            box-shadow: $box-shadow;
+            background: rgba($white, 0.88) !important;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
 
-            .navbar-brand { color: $gray-900; }
-            .navbar-nav .nav-item .nav-link { color: $gray-900; }
+            .navbar-brand { color: $gray-900; &:hover { color: $navy; } }
+
+            .navbar-nav .nav-item .nav-link {
+                color: $gray-700;
+                &:hover, &.active { color: $blue-accent; }
+            }
+
+            .navbar-toggler .navbar-toggler-icon {
+                &::before, &::after { background-color: $gray-900; }
+            }
         }
     }
 }
@@ -163,8 +180,8 @@
 .footer-logo {
     display: block;
     width: auto;
-    height: clamp(2.5rem, 5vw, 3.75rem);
-    max-width: min(240px, 56vw);
+    height: clamp(2.25rem, 5vw, 3.5rem);
+    max-width: min(200px, 48vw);
     object-fit: contain;
     margin: 0 auto 0.75rem;
 }

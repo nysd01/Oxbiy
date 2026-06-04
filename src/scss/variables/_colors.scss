@@ -1,14 +1,12 @@
-// 
+//
 // Colors
-// 
+//
 
-//- Override and add to color system
-$navy: #002d5b;
+$navy:        #002d5b;
 $blue-accent: #0066cc;
+$teal:        #00B4D8;
+$gold:        #F59E0B;
+$blue-light:  #EEF4FF;
 
-//- Override primary color
-$primary: $navy;
-
-// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
-// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-$min-contrast-ratio: 3;
+$primary:             $navy;
+$min-contrast-ratio:  3;

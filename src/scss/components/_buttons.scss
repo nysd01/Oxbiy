@@ -1,42 +1,102 @@
-// 
+//
 // Buttons
-// 
+//
 
 .btn {
+    font-family: $font-family-display;
     font-weight: 600;
-    letter-spacing: 0.02em;
-    border-radius: 0.5rem;
+    letter-spacing: 0.01em;
+    border-radius: 0.625rem;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
 }
 
+// Shimmer sweep on hover
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba($white, 0.18), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.55s ease;
+    pointer-events: none;
+}
+.btn:hover::before { left: 140%; }
+
 .btn-primary {
-    background-color: $primary;
-    border-color: $primary;
+    background: linear-gradient(135deg, $blue-accent 0%, $navy 100%);
+    border: none;
     color: $white;
-    box-shadow: 0 4px 14px rgba(0, 45, 91, 0.2);
+    box-shadow: 0 4px 16px rgba($navy, 0.25);
 
     &:hover, &:focus, &:active {
-        background-color: darken($primary, 8%);
-        border-color: darken($primary, 8%);
-        box-shadow: 0 6px 20px rgba(0, 45, 91, 0.3);
+        background: linear-gradient(135deg, lighten($blue-accent, 5%) 0%, lighten($navy, 6%) 100%);
+        border: none;
+        color: $white;
+        box-shadow: 0 8px 28px rgba($navy, 0.38);
         transform: translateY(-2px);
     }
+
+    &:active { transform: translateY(0); }
 }
 
 .btn-outline-primary {
     color: $primary;
     border: 2px solid $primary;
-    
+    background: transparent;
+
     &:hover {
-        background-color: $primary;
+        background: $primary;
         color: $white;
-        box-shadow: 0 4px 14px rgba(0, 45, 91, 0.2);
+        border-color: $primary;
+        box-shadow: 0 6px 20px rgba($navy, 0.25);
         transform: translateY(-2px);
     }
 }
 
-//- Custom XL button styling
+.btn-outline-light {
+    color: rgba($white, 0.9);
+    border: 1.5px solid rgba($white, 0.4);
+    background: rgba($white, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    &:hover {
+        background: rgba($white, 0.18);
+        color: $white;
+        border-color: rgba($white, 0.7);
+        transform: translateY(-2px);
+    }
+}
+
+.btn-light {
+    background: $white;
+    border-color: $white;
+    color: $navy;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+
+    &:hover {
+        background: $blue-light;
+        color: $navy;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+}
+
 .btn-xl {
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
+    padding: 0.9rem 2.25rem;
+    font-size: 0.95rem;
+    border-radius: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.btn-sm {
+    border-radius: 0.5rem;
+    font-size: 0.825rem;
+    letter-spacing: 0.01em;
 }

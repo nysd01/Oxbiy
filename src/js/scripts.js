@@ -80,9 +80,11 @@ window.addEventListener('DOMContentLoaded', event => {
             formSuccess.classList.add('d-none');
             formError.classList.add('d-none');
 
+            const phoneEl = contactForm.querySelector('[name="phone"]');
             const payload = {
                 name: contactForm.querySelector('[name="name"]').value.trim(),
                 email: contactForm.querySelector('[name="email"]').value.trim(),
+                phone: phoneEl ? phoneEl.value.trim() : '',
                 message: contactForm.querySelector('[name="message"]').value.trim(),
             };
 

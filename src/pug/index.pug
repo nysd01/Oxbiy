@@ -43,10 +43,16 @@ html(lang='en')
         // Google fonts
         link(rel='preconnect', href='https://fonts.googleapis.com')
         link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
-        link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap', rel='stylesheet')
+
+        // Preconnect for external images
+        link(rel='preconnect', href='https://images.unsplash.com')
 
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
+
+        // Analytics (Plausible — privacy-first, no cookie banner needed)
+        script(defer, data-domain='oxbiy.com', src='https://plausible.io/js/plausible.js')
 
         // JSON-LD Organization schema
         script(type='application/ld+json').
@@ -79,7 +85,7 @@ html(lang='en')
                 button.navbar-toggler.navbar-toggler-right(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 #navbarResponsive.collapse.navbar-collapse
-                    ul.navbar-nav.ms-auto.my-2.my-lg-0
+                    ul.navbar-nav.ms-auto.my-2.my-lg-0.align-items-lg-center
                         li.nav-item
                             a.nav-link(href='#about') About
                         li.nav-item
@@ -90,45 +96,74 @@ html(lang='en')
                             a.nav-link(href='#portfolio') Portfolio
                         li.nav-item
                             a.nav-link(href='#contact') Contact
+                        li.nav-item.ms-lg-2.mt-2.mt-lg-0
+                            a.btn.btn-primary.btn-sm.px-3(href='#contact') Get Started
 
         // Masthead
         header.masthead
-            // Background video
             video.masthead-video(autoplay muted loop playsinline preload='none' poster='assets/img/bg-masthead.jpg')
                 source(src='/assets/video/typing-bg.mp4', type='video/mp4')
 
             .container.px-4.px-lg-5.h-100
                 .row.gx-4.gx-lg-5.h-100.align-items-center.justify-content-center.text-center
-                    .col-lg-8.align-self-end
-                        h1.text-white.font-weight-bold OXBIY
-                        hr.divider
-                    .col-lg-8.align-self-baseline
-                        p.text-white-75.mb-5
-                            | OXBIY creates secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products.
-                        a.btn.btn-primary.btn-xl(href='#about') Find Out More
+                    .col-lg-9.col-xl-8
+                        .hero-badge Software Engineering Studio
+                        h1.text-white OXBIY
+                        span.hero-tagline Building Empires In The Digital Age
+                        p.text-white-75.mb-0
+                            | We create secure, scalable digital solutions that help businesses and individuals turn ideas into trusted products.
+                        .hero-ctas.d-flex.gap-3.justify-content-center.flex-wrap.mt-5
+                            a.btn.btn-primary.btn-xl(href='#about') Start a Project
+                            a.btn.btn-outline-light.btn-xl(href='#portfolio') View Our Work
+
+            .hero-scroll
+                a.hero-scroll-link(href='#about' aria-label='Scroll to content')
+                    i.bi-chevron-compact-down
 
         // About
         section#about.page-section.bg-light
             .container.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.align-items-center
                     .col-lg-6
+                        .section-badge About OXBIY
                         h2.mt-0 Who We Are
                         hr.divider.ms-0
                         p.text-muted.mb-4
                             | OXBIY is a technology company specializing in building secure, scalable web and mobile products. We help startups and enterprises transform ideas into reliable digital platforms with strong design, robust engineering, and security-first practices.
-                        ul.list-unstyled.mb-4
-                            li.mb-2
-                                i.bi-check-circle-fill.text-primary.me-2
-                                | Security-first development approach
-                            li.mb-2
-                                i.bi-check-circle-fill.text-primary.me-2
-                                | Scalable cloud architecture
-                            li.mb-2
-                                i.bi-check-circle-fill.text-primary.me-2
-                                | Human-centered UI/UX design
+                        ul.list-unstyled.about-check-list.mb-4
+                            li
+                                .check-icon: i.bi-shield-check
+                                span Security-first development approach
+                            li
+                                .check-icon: i.bi-cloud
+                                span Scalable cloud architecture
+                            li
+                                .check-icon: i.bi-people-fill
+                                span Human-centered UI/UX design
                         a.btn.btn-primary.btn-xl(href='#services') Our Services
                     .col-lg-6
-                        img.img-fluid.rounded-3.shadow-lg(src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80', alt='OXBIY Team Collaboration', loading='lazy')
+                        img.img-fluid.rounded-3.shadow-lg(src='https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fm=webp&fit=crop&w=800&q=80', alt='OXBIY Team Collaboration', loading='lazy', width='800', height='600')
+
+        // Stats
+        section#stats.page-section.bg-primary.text-white
+            .container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5.text-center
+                    .col-6.col-md-3.mb-4.mb-md-0.fade-up
+                        .stat-item
+                            .stat-number 7
+                            .stat-label Specialists
+                    .col-6.col-md-3.mb-4.mb-md-0.fade-up
+                        .stat-item
+                            .stat-number 3+
+                            .stat-label Products Built
+                    .col-6.col-md-3.fade-up
+                        .stat-item
+                            .stat-number 24h
+                            .stat-label Response Time
+                    .col-6.col-md-3.fade-up
+                        .stat-item
+                            .stat-number 100%
+                            .stat-label Security-First
 
         // Team
         section#team.page-section.bg-white
@@ -201,38 +236,39 @@ html(lang='en')
         section#services.page-section.bg-light
             .container.px-4.px-lg-5
                 .text-center.mb-5
-                    h2 Our Services
-                    hr.divider
-                    p.lead.mx-auto OXBIY delivers end-to-end product engineering and secure platform services.
+                    .section-badge.fade-up What We Do
+                    h2.fade-up Our Services
+                    hr.divider.fade-up
+                    p.lead.mx-auto.fade-up OXBIY delivers end-to-end product engineering and secure platform services.
                 .row.gx-4.gx-lg-5
-                    .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.text-center
-                            i.bi-window-stack
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .service-card.h-100
+                            .service-icon-wrap: i.bi-window-stack
                             h4 Web Application Development
                             p Enterprise-grade web platforms focused on performance and reliability.
-                    .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.text-center
-                            i.bi-phone-fill
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .service-card.h-100
+                            .service-icon-wrap: i.bi-phone-fill
                             h4 Mobile Application Development
                             p Native and cross-platform mobile apps built for engagement and retention.
-                    .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.text-center
-                            i.bi-bezier2
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .service-card.h-100
+                            .service-icon-wrap: i.bi-bezier2
                             h4 UI/UX Design
                             p Product design that converts users through clarity and polished interfaces.
-                    .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.text-center
-                            i.bi-gear-fill
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .service-card.h-100
+                            .service-icon-wrap: i.bi-gear-fill
                             h4 Business Process Automation
                             p Automation and integrations that reduce manual work and speed delivery.
-                    .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.text-center
-                            i.bi-plug-fill
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .service-card.h-100
+                            .service-icon-wrap: i.bi-plug-fill
                             h4 API Development & Integration
                             p Secure APIs and integrations to connect your ecosystem.
-                    .col-lg-4.col-md-6.mb-4
-                        .service-card.h-100.text-center
-                            i.bi-shield-check
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .service-card.h-100
+                            .service-icon-wrap: i.bi-shield-check
                             h4 Cybersecurity & Compliance
                             p Security reviews, threat modelling, and compliance guidance.
 
@@ -247,7 +283,7 @@ html(lang='en')
                 // Project 1
                 .row.gx-4.gx-lg-5.mb-5.align-items-center.fade-up
                     .col-lg-7
-                        img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80', alt='Job Finder — Recruitment Platform', loading='lazy')
+                        img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fm=webp&fit=crop&w=1200&q=80', alt='Job Finder — Recruitment Platform', loading='lazy', width='1200', height='800')
                     .col-lg-5
                         .p-4.bg-white.rounded-3.shadow.text-dark
                             .badge.bg-primary.mb-2 Recruitment
@@ -259,7 +295,7 @@ html(lang='en')
                 // Project 2
                 .row.gx-4.gx-lg-5.align-items-center.fade-up
                     .col-lg-7.order-lg-2
-                        img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80', alt='Chez Moi — Real Estate Platform', loading='lazy')
+                        img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fm=webp&fit=crop&w=1200&q=80', alt='Chez Moi — Real Estate Platform', loading='lazy', width='1200', height='800')
                     .col-lg-5.order-lg-1
                         .p-4.bg-white.rounded-3.shadow.text-dark
                             .badge.bg-primary.mb-2 Real Estate
@@ -274,6 +310,60 @@ html(lang='en')
                 h2.mb-4 Ready to build the future?
                 p.lead.mb-5 Tell us about your idea and we'll help you build it securely and at scale.
                 a.btn.btn-light.btn-xl(href='#contact') Get Started
+
+        // Testimonials
+        section#testimonials.page-section.bg-light
+            .container.px-4.px-lg-5
+                .text-center.mb-5
+                    h2.fade-up What Clients Say
+                    hr.divider.fade-up
+                    p.lead.text-muted.fade-up Real feedback from people we've built for.
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .testimonial-card
+                            .testimonial-stars
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                            blockquote.testimonial-text
+                                | "OXBIY built our entire platform from scratch. Security was embedded from day one — we passed our compliance audit without a single finding."
+                            .testimonial-author
+                                .testimonial-avatar AM
+                                div
+                                    .testimonial-name Alain M.
+                                    .testimonial-role CEO, FinTech Startup
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .testimonial-card
+                            .testimonial-stars
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                            blockquote.testimonial-text
+                                | "The team understood our vision immediately. The interface they designed converted significantly better than our old solution. Highly recommended."
+                            .testimonial-author
+                                .testimonial-avatar SK
+                                div
+                                    .testimonial-name Sophie K.
+                                    .testimonial-role Founder, E-commerce Brand
+                    .col-lg-4.col-md-6.mb-4.fade-up
+                        .testimonial-card
+                            .testimonial-stars
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                                i.bi-star-fill
+                            blockquote.testimonial-text
+                                | "Working with OXBIY felt like having a senior tech team in-house. Fast, reliable, and always security-conscious. They exceeded every deadline."
+                            .testimonial-author
+                                .testimonial-avatar KT
+                                div
+                                    .testimonial-name Kevin T.
+                                    .testimonial-role CTO, SaaS Company
 
         // Contact
         section#contact.page-section
@@ -296,6 +386,9 @@ html(lang='en')
                                 label(for='email') Email address
                                 .invalid-feedback Please enter a valid email address.
                             .form-floating.mb-3
+                                input#phone.form-control(type='tel', name='phone', placeholder='+237 6XX XXX XXX')
+                                label(for='phone') Phone number (optional)
+                            .form-floating.mb-3
                                 textarea#message.form-control(name='message', placeholder='Your message', style='height: 10rem;', required)
                                 label(for='message') Message
                                 .invalid-feedback Please enter a message.
@@ -316,21 +409,49 @@ html(lang='en')
                         div +237 676887147
 
         // Footer
-        footer.bg-light.py-5
+        footer.footer-main
             .container.px-4.px-lg-5
-                .footer-brand.text-center.mb-3
-                    img.footer-logo(src='/assets/img/logo.png', alt='OXBIY')
-                    .fw-bold.text-dark OXBIY
-                    .text-muted OXBIY builds secure, scalable digital solutions for businesses and individuals.
-                    .footer-social.d-flex.justify-content-center.gap-3.mt-3
-                        a(href='https://www.linkedin.com/in/oxbiy-company-74b356410?utm_source=share_via&utm_content=profile&utm_medium=member_android', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on LinkedIn')
-                            i.bi-linkedin
-                        a(href='https://www.facebook.com/share/18j4TQiY39/', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on Facebook')
-                            i.bi-facebook
-                        a(href='https://www.instagram.com/oxbiy?utm_source=qr&igsh=MWZudGhpbmVsY201eQ==', target='_blank', rel='noreferrer', aria-label='Follow OXBIY on Instagram')
-                            i.bi-instagram
-                .small.text-center.text-muted
-                    | Copyright &copy; 2026 OXBIY. All rights reserved.
+                .row.gx-5.gy-5.mb-2
+                    .col-lg-4.col-md-12
+                        img.footer-logo(src='/assets/img/logo.png', alt='OXBIY')
+                        .footer-brand-name OXBIY
+                        p.footer-desc OXBIY builds secure, scalable digital solutions for businesses and individuals worldwide.
+                        .d-flex.gap-2.mt-4
+                            a.footer-social-link(href='https://www.linkedin.com/in/oxbiy-company-74b356410', target='_blank', rel='noreferrer', aria-label='LinkedIn')
+                                i.bi-linkedin
+                            a.footer-social-link(href='https://www.facebook.com/share/18j4TQiY39/', target='_blank', rel='noreferrer', aria-label='Facebook')
+                                i.bi-facebook
+                            a.footer-social-link(href='https://www.instagram.com/oxbiy', target='_blank', rel='noreferrer', aria-label='Instagram')
+                                i.bi-instagram
+                    .col-lg-2.col-md-4.col-6
+                        h6.footer-heading Navigation
+                        ul.footer-links
+                            li: a(href='#about') About
+                            li: a(href='about-us.html') Team
+                            li: a(href='#services') Services
+                            li: a(href='#portfolio') Portfolio
+                            li: a(href='#contact') Contact
+                    .col-lg-2.col-md-4.col-6
+                        h6.footer-heading Projects
+                        ul.footer-links
+                            li: a(href='project-jobbe.html') Job Finder
+                            li: a(href='project-chez-moi.html') Chez Moi
+                    .col-lg-4.col-md-4
+                        h6.footer-heading Contact
+                        .footer-contact-item
+                            i.bi-envelope
+                            a(href='mailto:help-support@oxbiy.com') help-support@oxbiy.com
+                        .footer-contact-item
+                            i.bi-telephone
+                            span +237 676 887 147
+                        .footer-contact-item
+                            i.bi-globe
+                            a(href='https://oxbiy.com') oxbiy.com
+                .footer-bottom
+                    .container.px-0
+                        .d-flex.flex-column.flex-md-row.justify-content-between.align-items-center.gap-2
+                            p.small &copy; 2026 OXBIY. All rights reserved.
+                            p.small Building Empires In The Digital Age
 
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')

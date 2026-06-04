@@ -1,16 +1,21 @@
-// 
+//
 // Dividers
-// 
+//
 
 hr.divider {
     height: 3px;
-    max-width: 4rem;
-    margin: 1.5rem auto 2rem;
-    background-color: $primary;
+    max-width: 3rem;
+    margin: 1.25rem auto 2rem;
+    background: linear-gradient(90deg, $blue-accent, $teal);
     opacity: 1;
-    border-radius: 3px;
+    border: none;
+    border-radius: 4px;
+}
+
+hr.divider.ms-0 {
+    margin-left: 0;
 }
 
 hr.divider-light {
-    background-color: $white;
+    background: linear-gradient(90deg, rgba($white, 0.9), rgba($white, 0.4));
 }
