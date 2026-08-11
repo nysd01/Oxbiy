@@ -44,7 +44,7 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
             },
             body: JSON.stringify({
                 from,
-                to: ['help-support@oxbiy.com'],
+                to: ['help-support@oxbiy.com', 'nedjoudestin6@gmail.com'],
                 reply_to: email,
                 subject: `New message from ${esc(name)} — OXBIY website`,
                 html: `
