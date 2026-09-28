@@ -63,6 +63,28 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     }
 
+    // Hero badge — rotates through service names above the OXBIY title
+    const heroBadgeWords = document.querySelectorAll('.hero-badge-word');
+    if (heroBadgeWords.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let activeIndex = [...heroBadgeWords].findIndex(el => el.classList.contains('is-active'));
+        if (activeIndex < 0) activeIndex = 0;
+        const ROTATE_INTERVAL_MS = 2600;
+        const TRANSITION_MS = 500;
+
+        setInterval(() => {
+            const outgoing = heroBadgeWords[activeIndex];
+            outgoing.classList.remove('is-active');
+            outgoing.classList.add('is-prev');
+            // Once it's fully exited it's already at opacity 0, so dropping
+            // back to the default (hidden-below) state here is invisible —
+            // this just readies it to re-enter from below next time around.
+            setTimeout(() => outgoing.classList.remove('is-prev'), TRANSITION_MS);
+
+            activeIndex = (activeIndex + 1) % heroBadgeWords.length;
+            heroBadgeWords[activeIndex].classList.add('is-active');
+        }, ROTATE_INTERVAL_MS);
+    }
+
     // Contact form — Formspree (primary) + Resend email via /api/contact (secondary, best-effort)
     const contactForm = document.querySelector('#contactForm');
     if (contactForm) {

@@ -46,7 +46,9 @@ header.masthead {
     .hero-badge {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 0.5rem;
+        min-width: 19ch;
         background: rgba($white, 0.12);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
@@ -63,12 +65,48 @@ header.masthead {
 
         &::before {
             content: '';
+            flex: 0 0 auto;
             width: 6px;
             height: 6px;
             border-radius: 50%;
             background: $teal;
             box-shadow: 0 0 8px $teal;
             animation: pulse 2s ease infinite;
+        }
+
+        // Vertical "flip up" rotator cycling through service names — each
+        // word rests at translateY(100%) (below, hidden) by default, so a
+        // word that already exited upward (.is-prev) can be silently reset
+        // to that base state while still invisible (opacity 0 the whole
+        // time), ready to re-enter from below on its next turn. See the
+        // hero badge rotation logic in scripts.js.
+        .hero-badge-rotator {
+            position: relative;
+            flex: 1 1 auto;
+            height: 1.3em;
+            line-height: 1.3em;
+            overflow: hidden;
+        }
+
+        .hero-badge-word {
+            position: absolute;
+            inset: 0;
+            display: block;
+            white-space: nowrap;
+            text-align: center;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease;
+
+            &.is-active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            &.is-prev {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
         }
     }
 
@@ -147,7 +185,8 @@ header.masthead {
     header.masthead h1,
     header.masthead p,
     header.masthead .hero-badge,
+    header.masthead .hero-badge-word,
     header.masthead .hero-tagline,
     header.masthead .hero-ctas,
-    .hero-scroll { animation: none; }
+    .hero-scroll { animation: none; transition: none; }
 }

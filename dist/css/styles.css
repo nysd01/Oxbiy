@@ -11704,7 +11704,9 @@ header.masthead .masthead-video {
 header.masthead .hero-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  min-width: 19ch;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -11721,12 +11723,38 @@ header.masthead .hero-badge {
 }
 header.masthead .hero-badge::before {
   content: "";
+  flex: 0 0 auto;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #00B4D8;
   box-shadow: 0 0 8px #00B4D8;
   animation: pulse 2s ease infinite;
+}
+header.masthead .hero-badge .hero-badge-rotator {
+  position: relative;
+  flex: 1 1 auto;
+  height: 1.3em;
+  line-height: 1.3em;
+  overflow: hidden;
+}
+header.masthead .hero-badge .hero-badge-word {
+  position: absolute;
+  inset: 0;
+  display: block;
+  white-space: nowrap;
+  text-align: center;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease;
+}
+header.masthead .hero-badge .hero-badge-word.is-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+header.masthead .hero-badge .hero-badge-word.is-prev {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 header.masthead h1, header.masthead .h1 {
   font-size: clamp(3.5rem, 10vw, 8.5rem) !important;
@@ -11809,10 +11837,12 @@ header.masthead .hero-ctas {
   header.masthead h1, header.masthead .h1,
   header.masthead p,
   header.masthead .hero-badge,
+  header.masthead .hero-badge-word,
   header.masthead .hero-tagline,
   header.masthead .hero-ctas,
   .hero-scroll {
     animation: none;
+    transition: none;
   }
 }
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
