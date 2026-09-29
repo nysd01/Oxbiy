@@ -177,6 +177,44 @@
     }
 }
 
+// Google Website Translator — compact dropdown in the nav. autoDisplay:
+// false (set in the init script) keeps Google from injecting its own top
+// banner/iframe, which otherwise pushes the whole page down; these rules
+// are a second line of defense in case that banner still mounts briefly.
+.translate-nav-item {
+    display: flex;
+    align-items: center;
+    color: inherit;
+
+    .translate-widget {
+        display: inline-flex;
+        align-items: center;
+        min-height: 1.5em; // reserve space so the nav doesn't jump once the widget script finishes loading
+    }
+
+    .goog-te-gadget { font-size: 0; } // hide "Powered by Google Translate" text, keep the dropdown
+    .goog-te-gadget-icon { display: none !important; }
+
+    .goog-te-combo {
+        font-family: $font-family-display;
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: inherit;
+        background: transparent;
+        // currentColor isn't a Sass color literal, so rgba()/lighten() etc.
+        // can't touch it at build time — color-mix() is plain CSS Sass
+        // passes through untouched, and gets the same "current text color
+        // at reduced opacity" effect natively in the browser instead.
+        border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+    }
+}
+
+body { top: 0 !important; } // Google sets this inline on <body> when its banner mounts
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+
 .footer-logo {
     display: block;
     width: auto;

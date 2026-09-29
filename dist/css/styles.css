@@ -11657,6 +11657,42 @@ hr.divider-light {
   }
 }
 
+.translate-nav-item {
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+.translate-nav-item .translate-widget {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5em;
+}
+.translate-nav-item .goog-te-gadget {
+  font-size: 0;
+}
+.translate-nav-item .goog-te-gadget-icon {
+  display: none !important;
+}
+.translate-nav-item .goog-te-combo {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
 .footer-logo {
   display: block;
   width: auto;

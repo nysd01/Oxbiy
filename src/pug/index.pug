@@ -91,7 +91,7 @@ html(lang='en')
                 a.navbar-brand.d-flex.align-items-center.gap-2(href='#page-top' aria-label='OXBIY home')
                     img.logo(src='/assets/img/logo.png', alt='OXBIY')
                     span.brand-name OXBIY
-                button.navbar-toggler.navbar-toggler-right(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+                button.navbar-toggler.navbar-toggler-right.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 #navbarResponsive.collapse.navbar-collapse
                     ul.navbar-nav.ms-auto.my-2.my-lg-0.align-items-lg-center
@@ -105,6 +105,9 @@ html(lang='en')
                             a.nav-link(href='#portfolio') Portfolio
                         li.nav-item
                             a.nav-link(href='#contact') Contact
+                        li.nav-item.translate-nav-item
+                            i.bi-translate.me-1(aria-hidden='true')
+                            #google_translate_element.translate-widget
                         li.nav-item.ms-lg-2.mt-2.mt-lg-0
                             a.btn.btn-primary.btn-sm.px-3(href='#contact') Get Started
 
@@ -143,7 +146,7 @@ html(lang='en')
         // About
         section#about.page-section.bg-light
             .container.px-4.px-lg-5
-                .row.gx-4.gx-lg-5.align-items-center
+                .row.gx-4.gx-lg-5.gy-4.align-items-center
                     .col-lg-6
                         .section-badge About OXBIY
                         h2.mt-0 Who We Are
@@ -308,7 +311,7 @@ html(lang='en')
                     p.lead.text-white-75 Selected work that demonstrates our secure, scalable approach.
 
                 // Project 1
-                .row.gx-4.gx-lg-5.mb-5.align-items-center.fade-up
+                .row.gx-4.gx-lg-5.gy-4.mb-5.align-items-center.fade-up
                     .col-lg-7
                         img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fm=webp&fit=crop&w=1200&q=80', alt='Job Finder — Recruitment Platform', loading='lazy', width='1200', height='800')
                     .col-lg-5
@@ -320,7 +323,7 @@ html(lang='en')
                             a.btn.btn-outline-primary(href='project-jobbe.html') View Details
 
                 // Project 2
-                .row.gx-4.gx-lg-5.align-items-center.fade-up
+                .row.gx-4.gx-lg-5.gy-4.align-items-center.fade-up
                     .col-lg-7.order-lg-2
                         img.img-fluid.rounded-3.shadow(src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fm=webp&fit=crop&w=1200&q=80', alt='Chez Moi — Real Estate Platform', loading='lazy', width='1200', height='800')
                     .col-lg-5.order-lg-1
@@ -485,3 +488,12 @@ html(lang='en')
 
         // Core theme JS
         script(src='js/scripts.js')
+
+        // Google Website Translator — compact dropdown only (autoDisplay:
+        // false suppresses Google's own top banner/iframe so it never
+        // shifts the page layout).
+        script.
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
+            }
+        script(src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit')
