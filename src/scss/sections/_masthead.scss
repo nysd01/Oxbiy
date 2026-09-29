@@ -48,7 +48,12 @@ header.masthead {
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        min-width: 19ch;
+        // Fixed wide enough for the longest rotating phrase ("Software
+        // Engineering Studio") at this bold, letter-spaced, uppercase
+        // styling — ch units undercount badly here since letter-spacing
+        // and font-weight both add real width `ch` doesn't account for.
+        // min() keeps it from overflowing the viewport on small screens.
+        min-width: min(23rem, 90vw);
         background: rgba($white, 0.12);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);

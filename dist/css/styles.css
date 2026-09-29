@@ -11706,7 +11706,7 @@ header.masthead .hero-badge {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-width: 19ch;
+  min-width: min(23rem, 90vw);
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
