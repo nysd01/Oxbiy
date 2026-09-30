@@ -83,10 +83,6 @@
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item translate-nav-item">
-                            <i class="bi-translate me-1" aria-hidden="true"></i>
-                            <div class="translate-widget" id="google_translate_element"></div>
-                        </li>
                         <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-primary btn-sm px-3" href="#contact">Get Started</a></li>
                     </ul>
                 </div>
@@ -548,10 +544,18 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- Google Website Translator — compact dropdown only (autoDisplay:-->
-        <!-- false suppresses Google's own top banner/iframe so it never-->
-        <!-- shifts the page layout).-->
+        <!-- Auto-translate based on the visitor's own browser language — no-->
+        <!-- dropdown, no banner, nothing for them to click. The element div-->
+        <!-- stays hidden; Google Translate reads the googtrans cookie on-->
+        <!-- init and silently applies that language when it's set.-->
+        <div id="google_translate_element" style="display: none"></div>
         <script>
+            (function () {
+                var browserLang = (navigator.language || navigator.userLanguage || 'en').slice(0, 2).toLowerCase();
+                if (browserLang !== 'en' && document.cookie.indexOf('googtrans=') === -1) {
+                    document.cookie = 'googtrans=/en/' + browserLang + '; path=/';
+                }
+            })();
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
             }

@@ -105,9 +105,6 @@ html(lang='en')
                             a.nav-link(href='#portfolio') Portfolio
                         li.nav-item
                             a.nav-link(href='#contact') Contact
-                        li.nav-item.translate-nav-item
-                            i.bi-translate.me-1(aria-hidden='true')
-                            #google_translate_element.translate-widget
                         li.nav-item.ms-lg-2.mt-2.mt-lg-0
                             a.btn.btn-primary.btn-sm.px-3(href='#contact') Get Started
 
@@ -489,10 +486,18 @@ html(lang='en')
         // Core theme JS
         script(src='js/scripts.js')
 
-        // Google Website Translator — compact dropdown only (autoDisplay:
-        // false suppresses Google's own top banner/iframe so it never
-        // shifts the page layout).
+        // Auto-translate based on the visitor's own browser language — no
+        // dropdown, no banner, nothing for them to click. The element div
+        // stays hidden; Google Translate reads the googtrans cookie on
+        // init and silently applies that language when it's set.
+        #google_translate_element(style='display:none;')
         script.
+            (function () {
+                var browserLang = (navigator.language || navigator.userLanguage || 'en').slice(0, 2).toLowerCase();
+                if (browserLang !== 'en' && document.cookie.indexOf('googtrans=') === -1) {
+                    document.cookie = 'googtrans=/en/' + browserLang + '; path=/';
+                }
+            })();
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
             }

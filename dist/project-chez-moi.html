@@ -60,10 +60,6 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-                        <li class="nav-item translate-nav-item">
-                            <i class="bi-translate me-1" aria-hidden="true"></i>
-                            <div class="translate-widget" id="google_translate_element"></div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -149,7 +145,14 @@
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
+        <div id="google_translate_element" style="display: none"></div>
         <script>
+            (function () {
+                var browserLang = (navigator.language || navigator.userLanguage || 'en').slice(0, 2).toLowerCase();
+                if (browserLang !== 'en' && document.cookie.indexOf('googtrans=') === -1) {
+                    document.cookie = 'googtrans=/en/' + browserLang + '; path=/';
+                }
+            })();
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
             }
